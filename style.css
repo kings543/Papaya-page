@@ -1,0 +1,272 @@
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #263b2b;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+header {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: #287a3b;
+    font-size: 25px;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #263b2b;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #49a44d;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 45, 21, 0.88),
+            rgba(10, 45, 21, 0.25)
+        ),
+        url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1800&q=85");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tagline {
+    color: #c6f6a6;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: #b8f28d;
+}
+
+.hero-content > p:not(.tagline) {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 540px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #398b43;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #24672e;
+    transform: translateY(-2px);
+}
+
+/* Products Section */
+.products {
+    padding: 75px 7%;
+    text-align: center;
+    background: #f7faf5;
+}
+
+.products h2,
+.about h2,
+.contact h2 {
+    font-size: 34px;
+    color: #246b34;
+    margin-bottom: 10px;
+}
+
+.section-text {
+    color: #687568;
+    margin-bottom: 35px;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: white;
+    padding: 15px 15px 25px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    font-size: 21px;
+    margin: 18px 0 8px;
+}
+
+.product-card p {
+    color: #6c786c;
+    min-height: 50px;
+}
+
+.product-card h4 {
+    font-size: 23px;
+    color: #398b43;
+    margin: 15px 0;
+}
+
+/* About Section */
+.about {
+    padding: 75px 10%;
+    background: #eaf5e6;
+}
+
+.about > div {
+    max-width: 850px;
+    margin: auto;
+}
+
+.about p {
+    margin-top: 15px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.contact p {
+    margin: 12px 0 25px;
+}
+
+/* Footer */
+footer {
+    background: #173d24;
+    color: white;
+    text-align: center;
+    padding: 22px 15px;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .hero {
+        min-height: 480px;
+        padding: 55px 7%;
+    }
+
+    .product-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 520px) {
+    .logo {
+        font-size: 23px;
+    }
+
+    .navbar ul {
+        gap: 10px 14px;
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 430px;
+    }
+
+    .product-container {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card img {
+        height: 230px;
+    }
+
+    .products h2,
+    .about h2,
+    .contact h2 {
+        font-size: 28px;
+    }
+}
